@@ -1,0 +1,37 @@
+1. What do props help us to accomplish?
+Answer: Props (short for "properties") allow us to pass data from a parent component to a child component. They make components more reusable by enabling them to receive dynamic content and behave differently based on the data they receive.
+
+2. How do you pass a prop into a component?
+Answer: Props are passed to a component similarly to HTML attributes. We specify them inside the component tag when using the component.
+
+Example: <Contact name="John Doe" phone="123-456-7890" />
+
+3. can i pass a custom prop (e.g. `balhblah={true}`) to a native dom element? (e.g. <div balhblah={true} />) why or why not ?
+ans: No, you cannot pass a custom prop (e.g., balhblah={true}) directly to a native DOM element (e.g., <div balhblah={true} />) because the browser does not recognize balhblah as a valid HTML attribute. Here's why:
+------------Why Doesn’t It Work?
+React strips unknown props on native elements:
+When React renders an element like <div balhblah={true} />, it removes balhblah because it's not a standard HTML attribute.
+Browsers only support standard attributes:
+HTML elements (like <div>, <p>, etc.) only accept known attributes like className, id, style, etc.
+If React allowed unknown props, the browser would ignore them anyway
+
+4. How do i receive props in a component?
+function Page(){
+    return(
+        <header >
+        .....
+        </header>
+    )
+} 
+ans: 
+function Page(props){
+    return(
+        <header >
+        .....
+        </header>
+    )
+}
+
+
+5. what is the data type od prop when the component receives it?
+ans: an object
