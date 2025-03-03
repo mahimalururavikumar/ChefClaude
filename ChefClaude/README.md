@@ -9,20 +9,29 @@ Features
 ✅ Responsive UI with Tailwind CSS.
 
 Technologies Used
-React.js (Frontend)
-Vite (Development Server)
-Tailwind CSS (Styling)
-Hugging Face Inference API (AI-powered responses)
-Installation & Setup
+--React.js (Frontend)
+--Vite (Development Server)
+--Tailwind CSS (Styling)
+--Hugging Face Inference API (AI-powered responses)
+-----------------Installation & Setup
 1️⃣ Clone the Repository
 git clone https://github.com/your-username/ai-recipe-generator.git
 cd ai-recipe-generator
+
+
 2️⃣ Install Dependencies
 npm install
+
+
+
 3️⃣ Set Up Environment Variables
 Create a .env file in the project root and add:
 
 VITE_HF_ACCESS_TOKEN=your_huggingface_api_key
+
+
+
+
 4️⃣ Run the Application
 npm run dev
 Usage
