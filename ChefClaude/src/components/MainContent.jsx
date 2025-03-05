@@ -2,7 +2,7 @@ import React from "react";
 import Ingredients from "./Ingredients.jsx";
 import {getRecipeFromMistral} from "./ai.js";
 import Clauderecipe from "./Clauderecipe.jsx";
-
+import { useRef, useEffect } from "react";
 
 const MainContent = () => {
   const [ingredients, setIngredients] = React.useState(["Tomatoes", "Potato", "Lady Finger", "Brinjal"]);
@@ -16,12 +16,21 @@ const MainContent = () => {
     }
   }
 
+  const  recipeSection = useRef(null);
+
   const [recipe, setRecipe] = React.useState("");
 
   async function getRecipe(){
     const recipeMarkdown = await getRecipeFromMistral(ingredients);
     setRecipe(recipeMarkdown);
   }
+
+  useEffect(() => {
+    if(recipe != "" && recipeSection != null){
+      recipeSection.current.scrollIntoView({ behavior: "smooth" });
+    }
+  },[recipe])
+
 
   return (
     <main className="flex flex-col items-center mt-20">
@@ -44,7 +53,7 @@ const MainContent = () => {
       </form>
 
       {
-        ingredients.length > 0 && <Ingredients ingredients={ingredients} getRecipe={getRecipe}/>
+        ingredients.length > 0 && <Ingredients ingredients={ingredients} getRecipe={getRecipe} ref={recipeSection}/>
       }
 
       <Clauderecipe recipe={recipe}/>

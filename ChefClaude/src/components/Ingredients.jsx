@@ -22,6 +22,7 @@ const Ingredients = (props) => {
             </div>
             <button
               onClick={props.getRecipe}
+              ref={props.ref}
               className="mt-3 px-4 py-2 bg-green-500 text-white font-semibold rounded-md shadow-md hover:bg-green-600 transition-all"
             >
               Get a recipe
